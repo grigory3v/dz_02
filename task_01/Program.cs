@@ -4,18 +4,25 @@ class Program
 {
 static void Main(string[] args)
 {
-    Console.WriteLine("Введите трехзначное число");    
+    Console.WriteLine("Введите пятизначное  число");    
     string? str = Convert.ToString(Console.ReadLine());
     if (str != null)
-    {
-        int number = Convert.ToInt32(str);
-        if ( 99 < number && number < 1000)
+    {   
+        if (str.Length == 5) 
         {
-          
-            Console.Write(str[1]);
-        }
+            int i = 0;
+            int length = str.Length-1; 
+            if (str[i] == str[length])
+            {
+                if (str[i++] == str[length--])
+                {
+                    Console.WriteLine($"Число {str} является палиндромом");
+                } 
+            }   
+            else Console.WriteLine($"Число {str} НЕ является палиндромом");
+        }  
+        else Console.WriteLine($"Число {str} не пятизначное"); 
     }
-        else Console.WriteLine("Вы ввели неверное число");
-}
+    }
 }
 }
