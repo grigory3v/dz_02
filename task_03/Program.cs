@@ -1,23 +1,19 @@
-﻿namespace dz3
+﻿namespace task_03
 {
 class Program
 {
 static void Main(string[] args)
 {
     
-    Console.WriteLine("Введите цифру, обозначающую день недели ");
+    Console.WriteLine("Введите число ");
     int number = Convert.ToInt32(Console.ReadLine());
-    if ( 1 <= number && number <= 7)
+    
+    for (int i = 1; i <= number; i++)
     {
-        if ( number != 6 && number != 7 )
-        { 
-            Console.WriteLine("Этот день НЕ является выходным");
-        }
-
-        else Console.WriteLine("Этот день является выходным");
+    int n = Convert.ToInt32(Math.Pow(i, 3));
+    Console.Write($" {n} " );
     }
-    else Console.WriteLine(" Нет такого дня недели");
-
+    
 }
 }
 }
